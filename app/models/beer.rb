@@ -6,7 +6,7 @@ class Beer < ApplicationRecord
 
 	def self.return_beer_index_info
 		beers_index_info = [];
-		Beer.all.each do |beer|
+		Beer.order(quantity: :desc).all.each do |beer|
 			beers_index_info << {
 				id: beer.id,
 				name: beer.name,
