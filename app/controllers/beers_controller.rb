@@ -12,7 +12,7 @@ class BeersController < ApplicationController
 	end
 
 	def index
-		render json: Beer.all
+		render json: Beer.return_beer_index_info
 	end
 
 end
