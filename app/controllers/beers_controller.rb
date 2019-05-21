@@ -20,6 +20,9 @@ class BeersController < ApplicationController
 		@beer.quantity -= 1
 		@beer.save
 
+		@selection = Selection.new(beer_id: @beer.id)
+		@selection.save
+
 		render json: @beer.quantity
 	end
 

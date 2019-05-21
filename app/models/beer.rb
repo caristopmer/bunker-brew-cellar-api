@@ -1,6 +1,7 @@
 class Beer < ApplicationRecord
 	belongs_to :style
 	belongs_to :brewery
+	has_many :selections
 
 	validates :name, :brewery_id, :quantity, presence: true
 

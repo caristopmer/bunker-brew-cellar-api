@@ -5,4 +5,6 @@ Rails.application.routes.draw do
 
   get '/beers/:id/takeone' => 'beers#take'
   put '/beers/:id/restock' => 'beers#restock'
+
+  get '/selections' => 'selections#most_popular'
 end
