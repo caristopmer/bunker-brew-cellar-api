@@ -4,7 +4,10 @@ class BeersController < ApplicationController
 		@beer = Beer.new(
 			name: params[:name],
 			brewery_id: params[:brewery_id],
-			quantity: params[:quantity]
+			abv: params[:abv],
+			quantity: params[:quantity],
+			description: params[:description],
+			style_id: params[:style_id]
 		)
 		@beer.save
 
