@@ -4,7 +4,10 @@ class BeersController < ApplicationController
 		@beer = Beer.new(
 			name: params[:name],
 			brewery_id: params[:brewery_id],
-			quantity: params[:quantity]
+			abv: params[:abv],
+			quantity: params[:quantity],
+			description: params[:description],
+			style_id: params[:style_id]
 		)
 		@beer.save
 
@@ -19,6 +22,9 @@ class BeersController < ApplicationController
 		@beer = Beer.find(params[:id])
 		@beer.quantity -= 1
 		@beer.save
+
+		@selection = Selection.new(beer_id: @beer.id)
+		@selection.save
 
 		render json: @beer.quantity
 	end

@@ -5,4 +5,12 @@ Rails.application.routes.draw do
 
   get '/beers/:id/takeone' => 'beers#take'
   put '/beers/:id/restock' => 'beers#restock'
+
+  get '/breweries' => 'breweries#index'
+  post '/breweries' => 'breweries#create'
+
+  get '/styles' => 'styles#index'
+  post '/styles' => 'styles#create'
+
+  get '/selections' => 'selections#most_popular'
 end

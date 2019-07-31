@@ -8,7 +8,7 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins 'bunker-brew-cellar-app.herokuapp.com'
-    # origins 'localhost:4200'
+    origins 'localhost:4200'
 
     resource '*',
       headers: :any,
